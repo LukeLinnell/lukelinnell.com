@@ -11,55 +11,76 @@
   <meta property="og:image" content="https://lukelinnellproductions.com/preview.png" />
   <meta property="og:url" content="https://lukelinnellproductions.com" />
 
-  <style>
-    @font-face {
-      font-family: "ZaiOlivetti";
-      src: url("zai_OlivettiLettera22Typewriter.ttf") format("truetype");
-      font-display: swap;
-    }
-    html, body { height: 100%; margin: 0; }
-    body {
-      font-family: "ZaiOlivetti", monospace;
-      color: #fff;
-      text-align: center;
-      overflow-x: hidden;
-      background: #000; /* fallback */
-    }
-    #bg-video {
-      position: fixed; inset: 0;
-      width: 100%; height: 100%;
-      object-fit: cover; object-position: center;
-      z-index: -1;
-    }
+<style>
+  @font-face {
+    font-family: "ZaiOlivetti";
+    src: url("zai_OlivettiLettera22Typewriter.ttf") format("truetype");
+    font-display: swap;
+  }
+  html, body { height: 100%; margin: 0; }
+  body {
+    font-family: "ZaiOlivetti", monospace;
+    color: #fff;
+    text-align: center;
+    overflow-x: hidden;
+    background: #000; /* fallback */
+  }
+  #bg-video {
+    position: fixed; inset: 0;
+    width: 100%; height: 100%;
+    object-fit: cover; object-position: center;
+    z-index: -1;
+  }
+  .content {
+    min-height: 100vh;
+    display: flex; flex-direction: column;
+    align-items: center; justify-content: center;
+    gap: 20px; padding: 24px;
+  }
+  @media (min-width: 1024px) {
     .content {
-      min-height: 100vh;
-      display: flex; flex-direction: column;
-      align-items: center; justify-content: center;
-      gap: 20px; padding: 24px;
+      min-height: auto;
+      justify-content: flex-start;
+      padding-top: 80px;
+      max-width: 1000px;
+      margin: 0 auto;
     }
-    @media (min-width: 1024px) {
-      .content {
-        min-height: auto;
-        justify-content: flex-start;
-        padding-top: 80px;
-        max-width: 1000px;
-        margin: 0 auto;
-      }
-      .spotify-embed { width: 50%; max-width: 700px; }
+    .spotify-embed { width: 50%; max-width: 700px; }
+  }
+  .tagline { font-size: 2rem; }
+
+  /* Links */
+  .links {
+    display: flex;
+    flex-direction: column;   /* stack vertically on mobile */
+    gap: 12px;
+    align-items: center;
+    margin-bottom: 20px;
+  }
+  .links a {
+    display: inline-block;
+    color: #fff;
+    text-decoration: none;
+    font-size: 1.1rem;
+  }
+  .links a:hover { text-decoration: underline; }
+
+  .spotify-embed { width: min(600px, 90%); margin: 0 auto; }
+
+  /* On desktop: fan out horizontally */
+  @media (min-width: 768px) {
+    .links {
+      flex-direction: row;
+      justify-content: center;
+      gap: 20px;
     }
-    .tagline { font-size: 2rem; }
-    .links a {
-      display: inline-block; margin: 0 10px;
-      color: #fff; text-decoration: none; font-size: 1.1rem;
-    }
-    .links a:hover { text-decoration: underline; }
-    .spotify-embed { width: min(600px, 90%); margin: 0 auto; }
-     /* Mobile: hide video and show vertical image */
-    @media (max-width: 768px){
-      #bg-video { display:none; }
-      body {
-        background: #000 url("verticalbackground.png") center / cover no-repeat fixed;
-  </style>
+  }
+
+  /* Mobile: hide video and show vertical image */
+  @media (max-width: 768px){
+    #bg-video { display:none; }
+    body {
+</style>
 </head>
 <body>
   <video id="bg-video" autoplay muted loop playsinline>
