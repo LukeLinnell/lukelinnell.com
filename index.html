@@ -33,13 +33,24 @@ body, html {
 }
 
 /* Content Overlay */
-.content {
-    position: relative;
-    z-index: 1;
-    text-align: center;
-    top: 50%;
-    transform: translateY(-50%);
-    padding: 0 20px;
+/* default (mobile) stays centered */
+.content{
+  min-height:100vh;
+  display:flex; flex-direction:column;
+  align-items:center; justify-content:center;
+  gap:20px; padding:24px;
+}
+
+/* desktop: align to top with breathing room */
+@media (min-width:1024px){
+  .content{
+    min-height:auto;          /* stop full-height centering */
+    justify-content:flex-start;
+    padding-top:80px;         /* adjust to taste */
+    gap:24px;
+  }
+  .spotify-embed{ width:50%; max-width:700px; }
+  .content{ max-width:1000px; margin:0 auto; } /* keeps line-length sane */
 }
 
 /* Tagline */
