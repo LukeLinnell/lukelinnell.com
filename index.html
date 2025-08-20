@@ -1,105 +1,88 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>My Website</title>
-  <style>
-    /* Custom Font */
-    @font-face {
-      font-family: 'ZaiTypewriter';
-      src: url('zai_OlivettiLettera22Typewriter.ttf') format('truetype');
-      font-weight: normal;
-      font-style: normal;
-    }
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Luke Linnell</title>
+<style>
+  /* Custom font */
+  @font-face {
+    font-family: 'ZaiTypewriter';
+    src: url('zai_OlivettiLettera22Typewriter.ttf') format('truetype');
+  }
 
-    body, html {
-      margin: 0;
-      padding: 0;
-      height: 100%;
-      width: 100%;
-      font-family: 'ZaiTypewriter', monospace;
-      overflow-x: hidden;
-      background: black;
-    }
+  body, html {
+    margin: 0;
+    padding: 0;
+    height: 100%;
+    font-family: 'ZaiTypewriter', monospace;
+    overflow: hidden;
+  }
 
-    .video-background {
-      position: relative;
-      width: 100%;
-      height: 100%;
-      overflow: hidden;
-    }
+  /* Video background */
+  video {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    z-index: -1;
+  }
 
-    .video-background video {
-      position: absolute;
-      top: 50%;
-      left: 50%;
-      min-width: 100%;
-      min-height: 100%;
-      width: auto;
-      height: auto;
-      transform: translate(-50%, -50%);
-      object-fit: cover;
-      z-index: -1;
-    }
+  /* Content overlay */
+  .overlay {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+    color: white;
+  }
 
-    /* Overlay content */
-    .content {
-      position: relative;
-      z-index: 1;
-      text-align: center;
-      color: white;
-      top: 50%;
-      transform: translateY(-50%);
-      width: 100%;
-    }
+  .overlay h1 {
+    font-size: 2.5em;
+    margin-bottom: 20px;
+  }
 
-    .content h1 {
-      font-size: 3em;
-      margin-bottom: 1em;
-      font-family: 'ZaiTypewriter', monospace;
-    }
+  .links a {
+    display: inline-block;
+    margin: 10px;
+    color: white;
+    text-decoration: none;
+    font-size: 1.2em;
+  }
 
-    .links a {
-      display: inline-block;
-      margin: 0.5em;
-      padding: 0.75em 1.5em;
-      color: white;
-      background-color: rgba(0,0,0,0.5);
-      text-decoration: none;
-      border-radius: 5px;
-      font-weight: bold;
-      font-family: 'ZaiTypewriter', monospace;
-      transition: background 0.3s;
-    }
-
-    .links a:hover {
-      background-color: rgba(0,0,0,0.8);
-    }
-  </style>
+  .spotify-embed {
+    margin-top: 30px;
+  }
+</style>
 </head>
 <body>
 
-  <div class="video-background">
-    <!-- VIDEO BACKGROUND -->
-    <video autoplay muted loop playsinline>
-      <source src="background.mp4" type="video/mp4">
-      Your browser does not support HTML5 video.
-    </video>
+<!-- Video Background -->
+<video autoplay muted loop playsinline>
+  <source src="background.mp4" type="video/mp4">
+  Your browser does not support HTML5 video.
+</video>
 
-    <div class="content">
-      <h1>an ongoing art project</h1>
-
-      <div class="links">
-        <a href="https://open.spotify.com/artist/5k1k1mCa8kpn2nTVdpLOv3" target="_blank">Spotify</a>
-        <a href="https://www.instagram.com/lukelinnellmusic/" target="_blank">Instagram</a>
-        <a href="https://www.tiktok.com/@lukelinnellmusic?is_from_webapp=1&sender_device=pc" target="_blank">TikTok</a>
-        <a href="https://www.youtube.com/@lukelinnellproductions" target="_blank">YouTube</a>
-        <a href="https://www.shopify.com/" target="_blank">Shopify</a>
-      </div>
-
-    </div>
+<!-- Overlay Content -->
+<div class="overlay">
+  <h1>an ongoing art project</h1>
+  <div class="links">
+    <a href="https://www.tiktok.com/@lukelinnellmusic?is_from_webapp=1&sender_device=pc" target="_blank">TikTok</a>
+    <a href="https://www.instagram.com/lukelinnellmusic/" target="_blank">Instagram</a>
+    <a href="https://www.youtube.com/@lukelinnellproductions" target="_blank">YouTube</a>
+    <a href="https://lukelinnell.myshopify.com/" target="_blank">Shopify</a>
   </div>
+
+  <div class="spotify-embed">
+    <iframe data-testid="embed-iframe" style="border-radius:12px"
+      src="https://open.spotify.com/embed/artist/5k1k1mCa8kpn2nTVdpLOv3?utm_source=generator"
+      width="100%" height="352" frameborder="0" allowfullscreen="" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy">
+    </iframe>
+  </div>
+</div>
 
 </body>
 </html>
