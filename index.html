@@ -54,6 +54,11 @@
     }
     .links a:hover { text-decoration: underline; }
     .spotify-embed { width: min(600px, 90%); margin: 0 auto; }
+     /* Mobile: hide video and show vertical image */
+    @media (max-width: 768px){
+      #bg-video { display:none; }
+      body {
+        background: #000 url("verticalbackground.png") center / cover no-repeat fixed;
   </style>
 </head>
 <body>
