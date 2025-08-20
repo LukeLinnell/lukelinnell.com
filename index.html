@@ -1,97 +1,70 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Luke Linnell Productions</title>
-
-    <!-- Custom Font -->
-    <style>
-        @font-face {
-            font-family: 'ZaiOlivetti';
-            src: url('zai_OlivettiLettera22Typewriter.ttf') format('truetype');
-        }
-
-        body {
-            margin: 0;
-            font-family: 'ZaiOlivetti', monospace;
-            color: white;
-            text-align: center;
-            overflow-x: hidden;
-        }
-
-        /* Video Background */
-        #bg-video {
-            position: fixed;
-            right: 0;
-            bottom: 0;
-            min-width: 100%;
-            min-height: 100%;
-            z-index: -1;
-        }
-
-        /* Content on top */
-        .content {
-            position: relative;
-            top: 50%;
-            transform: translateY(-50%);
-        }
-
-        /* Tagline */
-        .tagline {
-            font-size: 2em;
-            margin-bottom: 20px;
-        }
-
-        /* Links */
-        .links a {
-            display: inline-block;
-            margin: 0 10px;
-            color: white;
-            text-decoration: none;
-            font-size: 1.2em;
-        }
-
-        .links a:hover {
-            text-decoration: underline;
-        }
-
-        /* Spotify Embed Responsive */
-        .spotify-embed {
-            width: 60%;
-            max-width: 600px;
-            margin: 20px auto;
-        }
-    </style>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Luke Linnell Productions</title>
+  <style>
+    @font-face{
+      font-family:"ZaiOlivetti";
+      src:url("zai_OlivettiLettera22Typewriter.ttf") format("truetype");
+      font-display:swap;
+    }
+    :root { color-scheme: dark; }
+    html,body { height:100%; margin:0; }
+    body{
+      font-family:"ZaiOlivetti", monospace;
+      color:#fff; text-align:center; overflow-x:hidden;
+      background:#000; /* fallback if video fails */
+    }
+    /* Fullscreen video bg */
+    #bg-video{
+      position:fixed; inset:0;
+      width:100%; height:100%;
+      object-fit:cover; object-position:center;
+      z-index:-1;
+    }
+    /* Center content */
+    .content{
+      min-height:100vh;
+      display:flex; flex-direction:column;
+      align-items:center; justify-content:center;
+      gap:20px; padding:24px;
+    }
+    .tagline{ font-size:2rem; }
+    .links a{
+      display:inline-block; margin:0 10px;
+      color:#fff; text-decoration:none; font-size:1.1rem;
+    }
+    .links a:hover{ text-decoration:underline; }
+    .spotify-embed{ width:min(600px, 90%); margin:0 auto; }
+  </style>
 </head>
 <body>
+  <video id="bg-video" autoplay muted loop playsinline>
+    <source src="background.mp4" type="video/mp4" />
+    <!-- Optional poster="verticalbackground.png" -->
+  </video>
 
-    <!-- Video Background -->
-    <video id="bg-video" autoplay muted loop>
-        <source src="background.mp4" type="video/mp4">
-        Your browser does not support the video tag.
-    </video>
+  <div class="content">
+    <div class="tagline">an ongoing art project</div>
 
-    <!-- Content -->
-    <div class="content">
-        <div class="tagline">an ongoing art project</div>
-        <div class="links">
-            <a href="https://www.spotify.com">Spotify</a>
-            <a href="https://www.instagram.com">Instagram</a>
-            <a href="https://www.tiktok.com/@lukelinnellmusic?is_from_webapp=1&sender_device=pc">TikTok</a>
-            <a href="https://www.youtube.com/@lukelinnellproductions">YouTube</a>
-            <a href="https://www.shopify.com">Shopify</a>
-        </div>
-
-        <!-- Spotify Embed -->
-        <div class="spotify-embed">
-            <iframe data-testid="embed-iframe" style="border-radius:12px" 
-                src="https://open.spotify.com/embed/artist/5k1k1mCa8kpn2nTVdpLOv3?utm_source=generator" 
-                width="100%" height="352" frameBorder="0" allowfullscreen="" 
-                allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy">
-            </iframe>
-        </div>
+    <div class="links">
+      <a href="https://open.spotify.com/artist/5k1k1mCa8kpn2nTVdpLOv3">Spotify</a>
+      <a href="https://www.instagram.com">Instagram</a>
+      <a href="https://www.tiktok.com/@lukelinnellmusic?is_from_webapp=1&sender_device=pc">TikTok</a>
+      <a href="https://www.youtube.com/@lukelinnellproductions">YouTube</a>
+      <a href="https://www.shopify.com">Shopify</a>
     </div>
 
+    <div class="spotify-embed">
+      <iframe
+        style="border-radius:12px" width="100%" height="352"
+        src="https://open.spotify.com/embed/artist/5k1k1mCa8kpn2nTVdpLOv3?utm_source=generator"
+        frameborder="0" loading="lazy"
+        allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture"
+        title="Spotify artist embed: Luke Linnell"></iframe>
+    </div>
+  </div>
 </body>
 </html>
