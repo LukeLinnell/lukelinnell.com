@@ -4,17 +4,17 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Luke Linnell Productions</title>
-
-    <!-- Custom Font -->
     <style>
-        @font-face {
-            font-family: 'ZaiTypewriter';
-            src: url('zai_OlivettiLettera22Typewriter.ttf') format('truetype');
-        }
-        body {
+        /* General reset */
+        * {
             margin: 0;
             padding: 0;
-            font-family: 'ZaiTypewriter', monospace;
+            box-sizing: border-box;
+        }
+
+        body, html {
+            height: 100%;
+            font-family: Arial, sans-serif;
             color: white;
             text-align: center;
             overflow-x: hidden;
@@ -23,90 +23,69 @@
         /* Video background */
         #bg-video {
             position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
+            right: 0;
+            bottom: 0;
+            min-width: 100%;
+            min-height: 100%;
             z-index: -1;
+            object-fit: cover;
         }
 
+        /* Content container */
         .content {
             position: relative;
             top: 50%;
             transform: translateY(-50%);
         }
 
-        .tagline {
-            font-size: 2em;
+        h1 {
+            font-size: 3em;
             margin-bottom: 20px;
         }
 
         .links a {
+            display: inline-block;
+            margin: 10px;
+            padding: 10px 20px;
+            background: rgba(0, 0, 0, 0.5);
             color: white;
             text-decoration: none;
-            margin: 0 15px;
-            font-size: 1.2em;
-        }
-        .links a:hover {
-            text-decoration: underline;
+            border-radius: 5px;
+            transition: background 0.3s;
         }
 
+        .links a:hover {
+            background: rgba(255, 255, 255, 0.3);
+        }
+
+        /* Spotify embed */
         .spotify-embed {
             margin-top: 30px;
-            width: 60%;
+            width: 80%;
             max-width: 600px;
-            border-radius: 12px;
-        }
-
-        /* Mobile fallback */
-        @media only screen and (max-width: 768px) {
-            #bg-video {
-                display: none; /* hide video on mobile */
-            }
-            body {
-                background: url('verticalbackground.png') no-repeat center center fixed;
-                background-size: cover;
-            }
-            .content {
-                padding: 20px;
-            }
-            .tagline {
-                font-size: 1.5em;
-            }
-            .links a {
-                display: block;
-                margin: 10px 0;
-            }
-            .spotify-embed {
-                width: 90%;
-                height: 300px;
-            }
         }
     </style>
 </head>
 <body>
-
-    <!-- Desktop Video Background -->
-    <video autoplay muted loop playsinline id="bg-video">
+    <!-- Video Background -->
+    <video autoplay muted loop id="bg-video">
         <source src="background.mp4" type="video/mp4">
         Your browser does not support HTML5 video.
     </video>
 
     <div class="content">
-        <div class="tagline">An ongoing art project</div>
+        <h1>an ongoing art project</h1>
         <div class="links">
-            <a href="https://open.spotify.com/artist/5k1k1mCa8kpn2nTVdpLOv3" target="_blank">Spotify</a>
-            <a href="https://www.instagram.com/lukelinnellmusic" target="_blank">Instagram</a>
+            <a href="https://open.spotify.com/artist/5k1k1mCa8kpn2nTVdpLOv3?utm_source=generator" target="_blank">Spotify</a>
+            <a href="https://www.instagram.com/lukelinnellmusic/" target="_blank">Instagram</a>
             <a href="https://www.tiktok.com/@lukelinnellmusic?is_from_webapp=1&sender_device=pc" target="_blank">TikTok</a>
             <a href="https://www.youtube.com/@lukelinnellproductions" target="_blank">YouTube</a>
-            <a href="https://www.shopify.com" target="_blank">Shopify</a>
+            <a href="https://www.shopify.com/" target="_blank">Shopify</a>
         </div>
 
-        <iframe class="spotify-embed" src="https://open.spotify.com/embed/artist/5k1k1mCa8kpn2nTVdpLOv3?utm_source=generator"
-            width="100%" height="352" frameborder="0" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" allowfullscreen>
-        </iframe>
+        <div class="spotify-embed">
+            <iframe data-testid="embed-iframe" style="border-radius:12px" src="https://open.spotify.com/embed/artist/5k1k1mCa8kpn2nTVdpLOv3?utm_source=generator" width="100%" height="352" frameborder="0" allowfullscreen="" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe>
+        </div>
     </div>
-
 </body>
 </html>
