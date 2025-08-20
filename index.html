@@ -8,89 +8,104 @@
     <!-- Custom Font -->
     <style>
         @font-face {
-            font-family: 'ZaiOlivetti';
+            font-family: 'ZaiTypewriter';
             src: url('zai_OlivettiLettera22Typewriter.ttf') format('truetype');
+            font-weight: normal;
+            font-style: normal;
         }
-
         body {
             margin: 0;
-            font-family: 'ZaiOlivetti', monospace;
+            padding: 0;
+            font-family: 'ZaiTypewriter', monospace;
             color: white;
             text-align: center;
             overflow-x: hidden;
         }
-
-        /* Video Background */
+        /* Desktop video background */
         #bg-video {
             position: fixed;
-            right: 0;
-            bottom: 0;
-            min-width: 100%;
-            min-height: 100%;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
             z-index: -1;
         }
-
-        /* Content on top */
         .content {
             position: relative;
             top: 50%;
             transform: translateY(-50%);
         }
-
-        /* Tagline */
         .tagline {
             font-size: 2em;
             margin-bottom: 20px;
         }
-
-        /* Links */
         .links a {
-            display: inline-block;
-            margin: 0 10px;
             color: white;
             text-decoration: none;
+            margin: 0 15px;
             font-size: 1.2em;
         }
-
         .links a:hover {
             text-decoration: underline;
         }
-
-        /* Spotify Embed Responsive */
         .spotify-embed {
+            margin-top: 30px;
             width: 60%;
             max-width: 600px;
-            margin: 20px auto;
+            border-radius: 12px;
+        }
+
+        /* Mobile styles */
+        @media only screen and (max-width: 768px) {
+            #bg-video {
+                display: none; /* hide video on mobile */
+            }
+            body {
+                background: url('verticalbackground.png') no-repeat center center fixed;
+                background-size: cover;
+            }
+            .content {
+                padding: 20px;
+            }
+            .tagline {
+                font-size: 1.5em;
+            }
+            .links a {
+                display: block;
+                margin: 10px 0;
+            }
+            .spotify-embed {
+                width: 90%;
+                height: 300px;
+            }
         }
     </style>
 </head>
 <body>
 
     <!-- Video Background -->
-    <video id="bg-video" autoplay muted loop>
+    <video autoplay muted loop id="bg-video">
         <source src="background.mp4" type="video/mp4">
-        Your browser does not support the video tag.
+        Your browser does not support HTML5 video.
     </video>
 
-    <!-- Content -->
     <div class="content">
-        <div class="tagline">an ongoing art project</div>
+        <div class="tagline">An ongoing art project</div>
         <div class="links">
             <a href="https://www.spotify.com">Spotify</a>
-            <a href="https://www.instagram.com">Instagram</a>
+            <a href="https://www.instagram.com/lukelinnellmusic">Instagram</a>
             <a href="https://www.tiktok.com/@lukelinnellmusic?is_from_webapp=1&sender_device=pc">TikTok</a>
             <a href="https://www.youtube.com/@lukelinnellproductions">YouTube</a>
             <a href="https://www.shopify.com">Shopify</a>
         </div>
 
         <!-- Spotify Embed -->
-        <div class="spotify-embed">
-            <iframe data-testid="embed-iframe" style="border-radius:12px" 
-                src="https://open.spotify.com/embed/artist/5k1k1mCa8kpn2nTVdpLOv3?utm_source=generator" 
-                width="100%" height="352" frameBorder="0" allowfullscreen="" 
-                allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy">
-            </iframe>
-        </div>
+        <iframe class="spotify-embed" data-testid="embed-iframe" 
+            src="https://open.spotify.com/embed/artist/5k1k1mCa8kpn2nTVdpLOv3?utm_source=generator" 
+            width="100%" height="352" frameborder="0" allowfullscreen="" 
+            allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy">
+        </iframe>
     </div>
 
 </body>
