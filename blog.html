@@ -3,41 +3,37 @@
 <head>
   <meta charset="UTF-8">
   <title>Blog</title>
-</head>
 
-<body style="font-family: Arial, sans-serif; margin: 0; padding: 40px; background: #111; color: #eee;">
+  <style>
+    @font-face {
+      font-family: 'ZaiOlivetti';
+      src: url('zai_OlivettiLettera22Typewriter.ttf') format('truetype');
+    }
 
-  <a href="index.html" style="color:#aaa; text-decoration:none;">← Back</a>
+    body {
+      margin: 0;
+      padding: 40px;
+      background: #111;
+      color: #eee;
+      font-family: 'ZaiOlivetti', monospace;
+    }
 
-  <!-- BLOG POST -->
-  <div style="margin-top:60px; border-bottom:1px solid #333; padding-bottom:40px;">
-    <div style="font-size:48px; font-weight:bold;">
-      September 16, 2025
-    </div>
-    <div style="font-size:28px; margin-top:10px;">
-      First entry
-    </div>
-    <div style="font-size:18px; margin-top:20px; line-height:1.6; max-width:700px;">
-      This is the first post.  
-      Write normally. Hit enter for new lines.  
-      No formatting tricks required.
-    </div>
-  </div>
+    .post {
+      margin-top: 60px;
+      padding-bottom: 40px;
+      border-bottom: 1px solid #333;
+      max-width: 700px;
+    }
 
-  <!-- BLOG POST -->
-  <div style="margin-top:60px; border-bottom:1px solid #333; padding-bottom:40px;">
-    <div style="font-size:48px; font-weight:bold;">
-      September 10, 2025
-    </div>
-    <div style="font-size:28px; margin-top:10px;">
-      Another thought
-    </div>
-    <div style="font-size:18px; margin-top:20px; line-height:1.6; max-width:700px;">
-      Older posts live underneath newer ones.  
-      Scrolling naturally goes back in time.
-    </div>
-  </div>
+    .date {
+      font-size: 48px;
+      font-weight: bold;
+    }
 
-</body>
-</html>
+    .title {
+      font-size: 28px;
+      margin-top: 10px;
+    }
 
+    .content {
+      font-
