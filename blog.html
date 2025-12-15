@@ -1,38 +1,73 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
   <meta charset="UTF-8">
   <title>Blog</title>
-  <style>
-@font-face {
-  font-family: Zai;
-  src: url("zai_OlivettiLettera22Typewriter.ttf");
-}
-body {
-  font-family: Zai, monospace;
-}
-</style>
 
+  <style>
+    @font-face {
+      font-family: "ZaiOlivetti";
+      src: url("zai_OlivettiLettera22Typewriter.ttf") format("truetype");
+    }
+
+    body {
+      margin: 0;
+      padding: 60px 40px;
+      background: #111;
+      color: #eee;
+      font-family: "ZaiOlivetti", monospace;
+    }
+
+    a {
+      color: #aaa;
+      text-decoration: none;
+    }
+
+    .post {
+      max-width: 720px;
+      margin-bottom: 80px;
+      border-bottom: 1px solid #333;
+      padding-bottom: 60px;
+    }
+
+    .date {
+      font-size: 48px;
+      font-weight: bold;
+    }
+
+    .title {
+      font-size: 28px;
+      margin-top: 10px;
+    }
+
+    .content {
+      font-size: 18px;
+      margin-top: 20px;
+      line-height: 1.7;
+    }
+  </style>
 </head>
 
-<body style="background:#111; color:#eee; font-family: Arial, sans-serif; padding:40px;">
+<body>
 
-  <a href="index.html" style="color:#aaa;">← Back</a>
+  <a href="index.html">← Back</a>
 
-  <div style="margin-top:60px; max-width:700px;">
-
-    <div style="font-size:48px; font-weight:bold;">
-      September 16, 2025
+  <div class="post">
+    <div class="date">September 16, 2025</div>
+    <div class="title">First entry</div>
+    <div class="content">
+      This is the first post.  
+      New posts go on top.  
+      Older posts stay below.
     </div>
+  </div>
 
-    <div style="font-size:28px; margin-top:10px;">
-      First entry
+  <div class="post">
+    <div class="date">September 10, 2025</div>
+    <div class="title">Earlier note</div>
+    <div class="content">
+      The page scrolls backward through time.
     </div>
-
-    <div style="font-size:18px; margin-top:20px; line-height:1.6;">
-      If you can read this, the blog is working again.
-    </div>
-
   </div>
 
 </body>
